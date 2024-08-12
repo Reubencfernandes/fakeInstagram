@@ -127,8 +127,54 @@ class _ProfilePageState extends State<ProfilePage> {
                   style: ElevatedButton.styleFrom(backgroundColor: Colors.grey[800],padding: EdgeInsets.only(left: 50,right: 50),shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
                 ),
               ],
+            ),
+            Container(
+              margin: EdgeInsets.only(left: 30,top: 15),
+              child: Row(
+                children: [
+                  Column(
+                    children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(50),
+                        child: Image.network(
+                          "https://lh3.googleusercontent.com/a/ACg8ocKgE-d1QTTIO8SqcQLcSIXc8y3WYnbYUZIl9lSqSFxcfTLbYD024Q=s288-c-no",
+                          height: 60,
+                          width: 60,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      Text("Project", style: TextStyle(color: Colors.white),),
+                    ],
+                  ),
+                  SizedBox(width: 10,),
+                  Column(
+                    children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(50),
+                        child: Image.network(
+                          "https://lh3.googleusercontent.com/a/ACg8ocKgE-d1QTTIO8SqcQLcSIXc8y3WYnbYUZIl9lSqSFxcfTLbYD024Q=s288-c-no",
+                          height: 60,
+                          width: 60,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      Text("Project", style: TextStyle(color: Colors.white),),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Icon(Icons.grid_4x4_rounded,color: Colors.white,),
+                Icon(Icons.movie_creation,color: Colors.white,),
+                Icon(Icons.person,color: Colors.white,),
+              ],
             )
           ],
-        ));
+        )
+    );
   }
 }
