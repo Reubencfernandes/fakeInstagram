@@ -15,11 +15,11 @@ class BottomNavigation extends StatefulWidget {
 class _BottomNavigationState extends State<BottomNavigation> {
    int _currentindex=0;
   List<Widget> widgetoptions = <Widget>[
-    HomePage(),
-    searchPage(),
-    CreatePage(),
-    ReelsPage(),
-    ProfilePage()
+    const HomePage(),
+    const searchPage(),
+    const CreatePage(),
+    const ReelsPage(),
+    const ProfilePage()
   ];
   @override
   Widget build(BuildContext context) {

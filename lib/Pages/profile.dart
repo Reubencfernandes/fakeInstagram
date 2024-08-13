@@ -12,13 +12,17 @@ class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     List<String> urls =[
-      "https://i.pinimg.com/564x/d9/11/a0/d911a0fd2b1d3736fb073e6e8b6d296a.jpg",
-      "https://images.pexels.com/photos/27684846/pexels-photo-27684846/free-photo-of-the-view-from-the-top-of-a-mountain-range-with-mountains-in-the-distance.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-      "https://i.pinimg.com/564x/7e/ac/be/7eacbee4a87ac4e8daea3eaf627389d9.jpg",
-      "https://i.pinimg.com/564x/b8/44/5d/b8445df6169c17299cdc802f7c0473de.jpg",
-      "https://i.pinimg.com/564x/8c/77/68/8c776843e792815a6fc8fd3f57a13edb.jpg",
-      "https://i.pinimg.com/564x/68/81/9c/68819cfdc8d1d56771466070f08843cc.jpg",
-      ""
+      "https://i.pinimg.com/564x/62/d1/59/62d1594f56297cab95174da989d01755.jpg",
+      "https://i.pinimg.com/564x/9c/ec/e6/9cece613575f4d686f4c0b6ee211897a.jpg",
+      "https://i.pinimg.com/564x/7b/ff/5a/7bff5a1e159bf0edd32f20fbeddef9e2.jpg",
+      "https://i.pinimg.com/564x/a9/30/bd/a930bdbd9b4e8aac368c23d38ffb29ca.jpg",
+      "https://i.pinimg.com/564x/77/a2/11/77a2111c1f7c364c469a578af6233dc7.jpg",
+      "https://i.pinimg.com/564x/88/da/e9/88dae98204c4b82fe9ad808b535559c8.jpg",
+      "https://i.pinimg.com/564x/d6/52/fd/d652fd915148eb19659f5ff7f4fac73e.jpg",
+      "https://i.pinimg.com/564x/7f/71/d0/7f71d04cc27b02f8e704ba03f76feb8e.jpg",
+      "https://i.pinimg.com/564x/05/f0/f1/05f0f17c39e5c294f3f9b2fcf3a57331.jpg",
+      "https://i.pinimg.com/564x/fa/a0/4d/faa04dd57bc1134419609fe6e5954685.jpg",
+      "https://i.pinimg.com/564x/4b/43/57/4b4357753862ab093865a34b6ec94ac0.jpg"
     ];
     return Scaffold(
         backgroundColor: Colors.black,
@@ -216,17 +220,18 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
             ),
             
-            _selectedIndex ==0  ? Container(
-              height: 1000,
-              child: GridView.count(crossAxisCount: 3,
-                children:
-                  List.generate(6, (index){
-                    return Image.network(
-                      urls[index],
-                      fit: BoxFit.cover,
-
-                    );
-                  }),
+            _selectedIndex ==0  ? Scrollbar(
+              child: GridView.count(
+                crossAxisCount: 3,
+                shrinkWrap: true, // Allows GridView to fit its content
+                physics:
+                NeverScrollableScrollPhysics(),
+                children: List.generate(urls.length, (index) {
+                  return Image.network(
+                    urls[index],
+                    fit: BoxFit.cover,
+                  );
+                }),
               ),
             ) : Text("Nothing",style: TextStyle(color: Colors.white),)
           ],
