@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -12,9 +11,9 @@ class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.black87,
+        backgroundColor: Colors.black,
         appBar: AppBar(
-          backgroundColor: Colors.black87,
+          backgroundColor: Colors.black,
           title: Text(
             "reuben_cf",
             style: TextStyle(
@@ -120,16 +119,34 @@ class _ProfilePageState extends State<ProfilePage> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-    ElevatedButton(onPressed: () {},child: Text("Edit profile",style: TextStyle(color: Colors.white),),style: ElevatedButton.styleFrom(backgroundColor: Colors.grey[800],padding: EdgeInsets.only(left: 50,right: 50),shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)))),
+                ElevatedButton(
+                    onPressed: () {},
+                    child: Text(
+                      "Edit profile",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.grey[800],
+                        padding: EdgeInsets.only(left: 50, right: 50),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)))),
                 SizedBox(width: 10),
-                ElevatedButton(onPressed: () {},
-                  child: Text("Share profile",style: TextStyle(color: Colors.white),),
-                  style: ElevatedButton.styleFrom(backgroundColor: Colors.grey[800],padding: EdgeInsets.only(left: 50,right: 50),shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
+                ElevatedButton(
+                  onPressed: () {},
+                  child: Text(
+                    "Share profile",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.grey[800],
+                      padding: EdgeInsets.only(left: 50, right: 50),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10))),
                 ),
               ],
             ),
             Container(
-              margin: EdgeInsets.only(left: 30,top: 15),
+              margin: EdgeInsets.only(left: 30, top: 15),
               child: Row(
                 children: [
                   Column(
@@ -143,10 +160,15 @@ class _ProfilePageState extends State<ProfilePage> {
                           fit: BoxFit.cover,
                         ),
                       ),
-                      Text("Project", style: TextStyle(color: Colors.white),),
+                      Text(
+                        "Project",
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ],
                   ),
-                  SizedBox(width: 10,),
+                  SizedBox(
+                    width: 10,
+                  ),
                   Column(
                     children: [
                       ClipRRect(
@@ -158,7 +180,10 @@ class _ProfilePageState extends State<ProfilePage> {
                           fit: BoxFit.cover,
                         ),
                       ),
-                      Text("Project", style: TextStyle(color: Colors.white),),
+                      Text(
+                        "Project",
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ],
                   ),
                 ],
@@ -168,13 +193,21 @@ class _ProfilePageState extends State<ProfilePage> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Icon(Icons.grid_4x4_rounded,color: Colors.white,),
-                Icon(Icons.movie_creation,color: Colors.white,),
-                Icon(Icons.person,color: Colors.white,),
+                Icon(
+                  Icons.grid_4x4_rounded,
+                  color: Colors.white,
+                ),
+                Icon(
+                  Icons.movie_creation,
+                  color: Colors.white,
+                ),
+                Icon(
+                  Icons.person,
+                  color: Colors.white,
+                ),
               ],
             )
           ],
-        )
-    );
+        ));
   }
 }
