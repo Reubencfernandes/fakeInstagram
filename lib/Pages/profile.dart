@@ -8,8 +8,18 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
+  late int _selectedIndex =0;
   @override
   Widget build(BuildContext context) {
+    List<String> urls =[
+      "https://i.pinimg.com/564x/d9/11/a0/d911a0fd2b1d3736fb073e6e8b6d296a.jpg",
+      "https://images.pexels.com/photos/27684846/pexels-photo-27684846/free-photo-of-the-view-from-the-top-of-a-mountain-range-with-mountains-in-the-distance.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      "https://i.pinimg.com/564x/7e/ac/be/7eacbee4a87ac4e8daea3eaf627389d9.jpg",
+      "https://i.pinimg.com/564x/b8/44/5d/b8445df6169c17299cdc802f7c0473de.jpg",
+      "https://i.pinimg.com/564x/8c/77/68/8c776843e792815a6fc8fd3f57a13edb.jpg",
+      "https://i.pinimg.com/564x/68/81/9c/68819cfdc8d1d56771466070f08843cc.jpg",
+      ""
+    ];
     return Scaffold(
         backgroundColor: Colors.black,
         appBar: AppBar(
@@ -189,25 +199,38 @@ class _ProfilePageState extends State<ProfilePage> {
                 ],
               ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Icon(
-                  Icons.grid_4x4_rounded,
-                  color: Colors.white,
-                ),
-                Icon(
-                  Icons.movie_creation,
-                  color: Colors.white,
-                ),
-                Icon(
-                  Icons.person,
-                  color: Colors.white,
-                ),
-              ],
-            )
+            Container(
+              child: NavigationBar(
+                  backgroundColor:Colors.black,
+                  selectedIndex: _selectedIndex,
+                  onDestinationSelected: (index){
+                    setState(() {
+                      _selectedIndex = index;
+                    });
+                  },
+                  destinations: <Widget>[
+                NavigationDestination(icon: Icon(Icons.grid_4x4_rounded,color: Colors.white,), label: ""),
+                NavigationDestination(icon: Icon(Icons.video_collection_outlined,color: Colors.white,), label: ""),
+                NavigationDestination(icon: Icon(Icons.person,color: Colors.white,), label: "")
+              ]
+              ),
+            ),
+            
+            _selectedIndex ==0  ? Container(
+              height: 1000,
+              child: GridView.count(crossAxisCount: 3,
+                children:
+                  List.generate(6, (index){
+                    return Image.network(
+                      urls[index],
+                      fit: BoxFit.cover,
+
+                    );
+                  }),
+              ),
+            ) : Text("Nothing",style: TextStyle(color: Colors.white),)
           ],
         ));
   }
 }
+
