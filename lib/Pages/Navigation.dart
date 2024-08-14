@@ -26,15 +26,19 @@ class _BottomNavigationState extends State<BottomNavigation> {
     return  Scaffold(
       body: widgetoptions.elementAt(_currentindex),
       bottomNavigationBar: BottomNavigationBar(
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.white,
+        backgroundColor: Colors.black,
+        type: BottomNavigationBarType.fixed,
         currentIndex: _currentindex,
         showSelectedLabels: false,
         showUnselectedLabels: false,
         items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(icon: Icon(Icons.home_outlined),label: "home",backgroundColor: Colors.black,),
-          BottomNavigationBarItem(icon: Icon(Icons.search),label: "search",backgroundColor: Colors.black,),
-          BottomNavigationBarItem(icon: Icon(Icons.create_new_folder_sharp),label: "create",backgroundColor: Colors.black,),
-          BottomNavigationBarItem(icon: Icon(Icons.video_collection_outlined),label: "reels",backgroundColor: Colors.black,),
-          BottomNavigationBarItem(icon: Icon(Icons.person),label: "person",backgroundColor: Colors.black,),
+          BottomNavigationBarItem(icon: Icon(Icons.home_outlined),label: "home",),
+          BottomNavigationBarItem(icon: Icon(Icons.search),label: "search",),
+          BottomNavigationBarItem(icon: Icon(Icons.create_new_folder_sharp),label: "create"),
+          BottomNavigationBarItem(icon: Icon(Icons.video_collection_outlined),label: "reels",),
+          BottomNavigationBarItem(icon: Icon(Icons.person),label: "person",),
         ],
         onTap: (index){
           setState(() {

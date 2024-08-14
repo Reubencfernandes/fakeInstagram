@@ -8,10 +8,10 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
-  late int _selectedIndex =0;
+  late int _selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
-    List<String> urls =[
+    List<String> urls = [
       "https://i.pinimg.com/564x/62/d1/59/62d1594f56297cab95174da989d01755.jpg",
       "https://i.pinimg.com/564x/9c/ec/e6/9cece613575f4d686f4c0b6ee211897a.jpg",
       "https://i.pinimg.com/564x/7b/ff/5a/7bff5a1e159bf0edd32f20fbeddef9e2.jpg",
@@ -168,14 +168,14 @@ class _ProfilePageState extends State<ProfilePage> {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(50),
                         child: Image.network(
-                          "https://lh3.googleusercontent.com/a/ACg8ocKgE-d1QTTIO8SqcQLcSIXc8y3WYnbYUZIl9lSqSFxcfTLbYD024Q=s288-c-no",
+                          "https://images.pexels.com/photos/672532/pexels-photo-672532.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
                           height: 60,
                           width: 60,
                           fit: BoxFit.cover,
                         ),
                       ),
-                      Text(
-                        "Project",
+                      const Text(
+                        "London",
                         style: TextStyle(color: Colors.white),
                       ),
                     ],
@@ -188,14 +188,14 @@ class _ProfilePageState extends State<ProfilePage> {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(50),
                         child: Image.network(
-                          "https://lh3.googleusercontent.com/a/ACg8ocKgE-d1QTTIO8SqcQLcSIXc8y3WYnbYUZIl9lSqSFxcfTLbYD024Q=s288-c-no",
+                          "https://images.pexels.com/photos/1470502/pexels-photo-1470502.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
                           height: 60,
                           width: 60,
                           fit: BoxFit.cover,
                         ),
                       ),
                       Text(
-                        "Project",
+                        "UAE",
                         style: TextStyle(color: Colors.white),
                       ),
                     ],
@@ -203,39 +203,103 @@ class _ProfilePageState extends State<ProfilePage> {
                 ],
               ),
             ),
-            Container(
-              child: NavigationBar(
-                  backgroundColor:Colors.black,
-                  selectedIndex: _selectedIndex,
-                  onDestinationSelected: (index){
-                    setState(() {
-                      _selectedIndex = index;
-                    });
-                  },
-                  destinations: <Widget>[
-                NavigationDestination(icon: Icon(Icons.grid_4x4_rounded,color: Colors.white,), label: ""),
-                NavigationDestination(icon: Icon(Icons.video_collection_outlined,color: Colors.white,), label: ""),
-                NavigationDestination(icon: Icon(Icons.person,color: Colors.white,), label: "")
-              ]
+            NavigationBar(
+                indicatorColor: Colors.transparent,
+                backgroundColor: Colors.black,
+                selectedIndex: _selectedIndex,
+                onDestinationSelected: (index) {
+                  setState(() {
+                    _selectedIndex = index;
+                  });
+                },
+                destinations: const <Widget>[
+                  NavigationDestination(
+                      icon: Icon(
+                        Icons.grid_4x4_rounded,
+                        color: Colors.white,
+                      ),
+                      label: ""),
+                  NavigationDestination(
+                      icon: Icon(
+                        Icons.video_collection_outlined,
+                        color: Colors.white,
+                      ),
+                      label: ""),
+                  NavigationDestination(
+                      icon: Icon(
+                        Icons.person,
+                        color: Colors.white,
+                      ),
+                      label: "")
+                ]),
+            _selectedIndex == 0
+                ? Scrollbar(
+                    child: GridView.count(
+                      crossAxisCount: 3,
+                      shrinkWrap: true, // Allows GridView to fit its content
+                      physics: const NeverScrollableScrollPhysics(),
+                      children: List.generate(urls.length, (index) {
+                        return Image.network(
+                          urls[index],
+                          fit: BoxFit.cover,
+                        );
+                      }),
+                    ),
+                  )
+                : _selectedIndex == 1 ? Container(
+                    margin: EdgeInsets.only(left: 50, right: 50),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.video_collection_outlined,
+                          color: Colors.white,
+                          size: 100,
+                        ),
+                        Text(
+                          "Reels by you",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20),
+                        ),
+                        Text(
+                          "When you add A Reel it will appear Here",
+                          style: TextStyle(
+                              color: Colors.grey, fontWeight: FontWeight.bold),
+                          textAlign: TextAlign.center,
+                        ),
+                      ],
+                    ),
+                  ) :Container(
+              margin: EdgeInsets.only(left: 50, right: 50),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.person,
+                    color: Colors.white,
+                    size: 100,
+                  ),
+                  Text(
+                    "Photos and videos of you",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20),
+                  ),
+                  Text(
+                    "When people tag you in photos and videos they'll appear here",
+                    style: TextStyle(
+                        color: Colors.grey, fontWeight: FontWeight.bold),
+                    textAlign: TextAlign.center,
+                  ),
+                ],
               ),
-            ),
-            
-            _selectedIndex ==0  ? Scrollbar(
-              child: GridView.count(
-                crossAxisCount: 3,
-                shrinkWrap: true, // Allows GridView to fit its content
-                physics:
-                NeverScrollableScrollPhysics(),
-                children: List.generate(urls.length, (index) {
-                  return Image.network(
-                    urls[index],
-                    fit: BoxFit.cover,
-                  );
-                }),
-              ),
-            ) : Text("Nothing",style: TextStyle(color: Colors.white),)
+            )
           ],
         ));
   }
 }
-
