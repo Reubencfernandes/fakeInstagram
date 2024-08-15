@@ -2,6 +2,7 @@ import 'dart:core';
 import 'package:fakeinstagram/Pages/components/cards.dart';
 import 'package:fakeinstagram/Pages/components/story.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CardModel {
   final String link;
@@ -80,9 +81,12 @@ class HomePage extends StatelessWidget {
       backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: const Text(
+        title: Text(
           'Instagram',
-          style: TextStyle(color: Colors.white),
+          style: GoogleFonts.pacifico(
+            fontSize: 24, // Adjusted font size to fit within the AppBar
+            color: Colors.white,
+          ),
         ),
         actions: [
           IconButton(

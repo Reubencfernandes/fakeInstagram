@@ -65,7 +65,7 @@ class Stories extends StatelessWidget {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(50),
                     child: Image.network(
-                      "https://lh3.googleusercontent.com/a/ACg8ocKgE-d1QTTIO8SqcQLcSIXc8y3WYnbYUZIl9lSqSFxcfTLbYD024Q=s288-c-no",
+                      "https://i.pinimg.com/564x/86/4a/b5/864ab5d83424eca08ae9023c5ea40969.jpg",
                       height: 80,
                       width: 80,
                       fit: BoxFit.cover,
@@ -73,7 +73,7 @@ class Stories extends StatelessWidget {
                   ),
                 ),
                 const Text(
-                  "Reuben",
+                  "Kenshi Yonezu",
                   style: TextStyle(
                     color: Colors.white,
                   ),
@@ -91,7 +91,7 @@ class Stories extends StatelessWidget {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(50),
                     child: Image.network(
-                      "https://lh3.googleusercontent.com/a/ACg8ocKgE-d1QTTIO8SqcQLcSIXc8y3WYnbYUZIl9lSqSFxcfTLbYD024Q=s288-c-no",
+                      "https://i.pinimg.com/564x/48/49/ba/4849ba2ea6517f805785071120cccc08.jpg",
                       height: 80,
                       width: 80,
                       fit: BoxFit.cover,
@@ -99,7 +99,7 @@ class Stories extends StatelessWidget {
                   ),
                 ),
                 const Text(
-                  "Reuben",
+                  "Ronaldo",
                   style: TextStyle(
                     color: Colors.white,
                   ),
@@ -117,7 +117,7 @@ class Stories extends StatelessWidget {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(50),
                     child: Image.network(
-                      "https://lh3.googleusercontent.com/a/ACg8ocKgE-d1QTTIO8SqcQLcSIXc8y3WYnbYUZIl9lSqSFxcfTLbYD024Q=s288-c-no",
+                      "https://i.pinimg.com/564x/29/78/26/297826c9ac3a69fa64dc975dd22cfd1a.jpg",
                       height: 80,
                       width: 80,
                       fit: BoxFit.cover,
@@ -125,7 +125,7 @@ class Stories extends StatelessWidget {
                   ),
                 ),
                 const Text(
-                  "Reuben",
+                  "Shinkansen",
                   style: TextStyle(
                     color: Colors.white,
                   ),
@@ -143,7 +143,7 @@ class Stories extends StatelessWidget {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(50),
                     child: Image.network(
-                      "https://lh3.googleusercontent.com/a/ACg8ocKgE-d1QTTIO8SqcQLcSIXc8y3WYnbYUZIl9lSqSFxcfTLbYD024Q=s288-c-no",
+                      "https://i.pinimg.com/564x/50/c9/cd/50c9cd35e5ebcd330e1540b3a76b4b20.jpg",
                       height: 80,
                       width: 80,
                       fit: BoxFit.cover,
@@ -151,7 +151,7 @@ class Stories extends StatelessWidget {
                   ),
                 ),
                 const Text(
-                  "Reuben",
+                  "Bakugo",
                   style: TextStyle(
                     color: Colors.white,
                   ),

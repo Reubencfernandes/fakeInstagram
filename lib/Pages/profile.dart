@@ -75,8 +75,9 @@ class _ProfilePageState extends State<ProfilePage> {
                           style: TextStyle(color: Colors.blueGrey)),
                       TextButton.icon(
                         onPressed: () {},
-                        label: Text("reo-fernandes.xyz"),
-                        icon: Icon(Icons.link),
+                        label: Text("reo-fernandes.xyz",style: TextStyle(color: Colors.blue
+                        ),),
+                        icon: Icon(Icons.link,color: Colors.blue,),
                         iconAlignment: IconAlignment.start,
                       ),
                     ],
@@ -86,7 +87,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       SizedBox(
                         height: 30,
                       ),
-                      Text("88",
+                      Text("11",
                           style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.w500)),
@@ -165,13 +166,18 @@ class _ProfilePageState extends State<ProfilePage> {
                 children: [
                   Column(
                     children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(50),
-                        child: Image.network(
-                          "https://images.pexels.com/photos/672532/pexels-photo-672532.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                          height: 60,
-                          width: 60,
-                          fit: BoxFit.cover,
+                      Container(
+                        padding: EdgeInsets.all(5),
+                        decoration: BoxDecoration(border: Border.all(width: 4),shape: BoxShape.circle,color: Colors.grey.shade700
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(50),
+                          child: Image.network(
+                            "https://images.pexels.com/photos/672532/pexels-photo-672532.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                            height: 60,
+                            width: 60,
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
                       const Text(
@@ -185,13 +191,18 @@ class _ProfilePageState extends State<ProfilePage> {
                   ),
                   Column(
                     children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(50),
-                        child: Image.network(
-                          "https://images.pexels.com/photos/1470502/pexels-photo-1470502.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                          height: 60,
-                          width: 60,
-                          fit: BoxFit.cover,
+                      Container(
+                        padding: EdgeInsets.all(5),
+                        decoration: BoxDecoration(border: Border.all(width: 4),shape: BoxShape.circle,color: Colors.grey.shade700
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(50),
+                          child: Image.network(
+                            "https://images.pexels.com/photos/1470502/pexels-photo-1470502.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                            height: 60,
+                            width: 60,
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
                       Text(
